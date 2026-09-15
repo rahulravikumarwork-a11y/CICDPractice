@@ -2,11 +2,42 @@ pipeline {
 
     agent any
 
+    environment{
+        Test_env='prod'
+        App_name='abctech'
+        App_version='1.0.0'
+    }
+
     stages{
-         stage('Print'){
+
+        stage('checkout'){
             steps{
                 bat '''
-                    echo hello world
+                    echo git checkout
+                '''
+            }
+        }
+         stage('Build'){
+            steps{
+                bat 'echo app version is %App_version%'
+                bat '''
+                    echo Build the code
+                '''
+            }
+        }
+        stage('Test'){
+            steps{
+
+                echo "test runs on the app ${env.App_name}"
+                bat '''
+                    echo test the code
+                '''
+            }
+        }
+        stage('Print'){
+            steps{
+                bat '''
+                    echo Print the result
                 '''
             }
         }
