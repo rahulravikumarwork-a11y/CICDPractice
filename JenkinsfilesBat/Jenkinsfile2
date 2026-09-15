@@ -10,13 +10,13 @@ pipeline {
 
     parameters{
         choice(
-            name: 'Deploy Env',
+            name: 'Deploy_Env',
             choices: ['SIT','UAT','PROD'],
             description: 'Select the environment'
         )
 
         booleanParam{
-            name: 'Run tests',
+            name: 'Run_tests',
             defaultValue: true,
             description: 'Run Tests?'
 
