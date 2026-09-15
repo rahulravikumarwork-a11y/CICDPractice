@@ -1,0 +1,14 @@
+pipeline {
+
+    agent any
+
+    stages{
+         stage('Print'){
+            steps{
+                bat '''
+                    echo hello world
+                '''
+            }
+        }
+    }
+}
