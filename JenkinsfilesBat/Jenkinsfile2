@@ -5,9 +5,29 @@ pipeline {
     environment{
         Test_env='prod'
         App_name='abctech'
-        App_version='1.0.0'
+      //  App_version='1.0.0'
     }
 
+    parameters{
+        choice(
+            name: 'Deploy Env',
+            choices: ['SIT','UAT','PROD'],
+            description: 'Select the environment'
+        )
+
+        booleanParam{
+            name: 'Run tests',
+            defaultValue: true,
+            description: 'Run Tests?'
+
+        }
+
+        String(
+            name: 'App_version',
+            defaultValue: '1.0.0',
+            description: 'Application Version'
+        )
+    }
     stages{
 
         stage('checkout'){
