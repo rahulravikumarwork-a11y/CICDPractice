@@ -15,12 +15,12 @@ pipeline {
             description: 'Select the environment'
         )
 
-        booleanParam{
+        booleanParam(
             name: 'Run_tests',
             defaultValue: true,
             description: 'Run Tests?'
 
-        }
+        )
 
         String(
             name: 'App_version',
