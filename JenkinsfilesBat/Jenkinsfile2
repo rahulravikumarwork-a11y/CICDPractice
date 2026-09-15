@@ -42,10 +42,11 @@ pipeline {
                 bat 'echo app version is %App_version%'
                 bat '''
                     echo Build the code
-                '''
                  echo Environment: %DEPLOY_ENV%
                     echo Version: %APP_VERSION%
                     echo Run Tests: %RUN_TESTS%
+
+                    '''
             }
         }
         stage('Test'){
