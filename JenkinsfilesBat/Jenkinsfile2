@@ -22,7 +22,7 @@ pipeline {
 
         )
 
-        String(
+        string(
             name: 'App_version',
             defaultValue: '1.0.0',
             description: 'Application Version'
